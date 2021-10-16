@@ -1,7 +1,7 @@
 # Employee-API_Challenge
 ## Brief Discription
 
-This is a backend challenge on creating a Restful API and database for an employee management system documented on <a href="https://employee-ap.herokuapp.com/api-documents/">here</a>
+This is a backend challenge on creating a Restful API and database for an employee management system documented <a href="https://employee-ap.herokuapp.com/api-documents/">here</a>
 
 ## Stack
 
