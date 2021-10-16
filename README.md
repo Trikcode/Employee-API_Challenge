@@ -20,7 +20,7 @@ To run the node server, run `node app.js`.
 ## Testing
 The testing was done using postman
 
-#Deploy
+# Deploy
 I deployed the app on <a href="https://employee-ap.herokuapp.com/">heroku </a>
 
 ## Approach
