@@ -1,0 +1,147 @@
+openapi: 3.0.0
+info:
+  title: Employee-API
+  contact: {}
+  version: '1.0'
+servers:
+  - url: https://employee-ap.herokuapp.com/api/v1
+    variables: {}
+paths:
+  /employee:
+    post:
+      tags:
+        - EMP
+      summary: CreateEmployee
+      operationId: CreateEmployee
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /employee/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The employee ID
+    delete:
+      tags:
+        - EMP
+      summary: deleteEmployee
+      operationId: deleteEmployee
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    get:
+      tags:
+        - EMP
+      summary: SearchEmployee
+      operationId: SearchEmployee
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    patch:
+      tags:
+        - EMP
+      summary: SuspendEmployee
+      operationId: SuspendEmployee
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /auth/register:
+    post:
+      tags:
+        - MANAGER
+      summary: mgr SignUP
+      operationId: mgrSignUP
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mgrSignUPRequest'
+            example:
+              email: wisepro25@gmail.com
+              password: secret
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/login:
+    post:
+      tags:
+        - MANAGER
+      summary: mgrlogin
+      operationId: mgrlogin
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mgrloginrequest'
+            example:
+              name: nob
+              email: nobertwise25@gmail.com
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+components:
+  schemas:
+    mgrSignUPRequest:
+      title: mgrSignUPRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: wisepro25@gmail.com
+        password: secret
+    mgrloginrequest:
+      title: mgrloginrequest
+      required:
+        - name
+        - email
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+      example:
+        name: nob
+        email: nobertwise25@gmail.com
+  securitySchemes:
+    httpBearer:
+      type: http
+      scheme: bearer
+security:
+  - httpBearer: []
+tags:
+  - name: EMP
+  - name: MANAGER
